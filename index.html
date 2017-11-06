@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Boss Burgers | Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"> </head>
+
+<body>
+    <header class="header">
+        <div class="htop">
+            <div id="checkoutdiv " class="container">
+                <div class="row">
+                    <div class="col-md-6 text-xs-right ">(<span class="items text-muted"></span> <small>items</small>) <span class="total"></span> </div>
+                    <div class="col-md-6 text-xs-right"> <span class="btn btn-success" data-toggle="modal" data-target="#cart">Open Shopping Cart</span><a href="checkout.html" class="btn btn-primary">Proceed to checkout</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="hbot">
+            <div class="container">
+                <nav class="navbar navbar-full navbar-dark">
+				<h3 style="color:white; float-sm-left">BOSS BURGERS</h3>
+                    <button class="navbar-toggler light float-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#nvbar"></button>
+                    <div id="nvbar" class="collapse navbar-toggleable-xs">
+                        <ul class="nav navbar-nav float-sm-right ">
+                            <li class="nav-item"><a class="nav-link" href="index.html" style="color:white";>Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html"style="color:white">About</a></li>
+							 <li class="nav-item"><a class="nav-link" href="locations.html"style="color:white">Stores</a></li>
+                            <li class="nav-item"><a class="nav-link" href="products.html" style="color:white">Menu</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <!-- content changes on each page -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="car" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#car" data-slide-to="0" class="active"></li>
+                            <li data-target="#car" data-slide-to="1"></li>
+                            <li data-target="#car" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active"><img src="images/b1.png"></div>
+                            <div class="carousel-item "><img src="images/b2.png"></div>
+                            <div class="carousel-item"><img src="images/b3.png"></div>
+                        </div> <a class="left carousel-control" href="#car" role="button" data-slide="prev"><span class="icon prev"></span></a> <a class="right carousel-control" href="#car" role="button" data-slide="next"><span class="icon next"></span></a> </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                     <p id="plaid"><b>Tasty beef and lamb dishes are excellent sources of many essential nutrients and make an important contribution to the healthy, balanced diet of New Zealanders.</b></p>
+					 <p id="plaid"><b>Select from our artisan gourmet burgers below or customise bergers from our menu page to your taste buds!</b></p>
+                </div>
+                
+            </div>
+           <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-block">
+                            <h3 class="card-title">Hawaiian</h3>
+                            <h6 class="card-subtitle text-muted">$6.20</h6> <img src="images/hawaiian.png" class="img-fluid"> </div>
+                        <div class="card-block">
+                            <div class="card-text">Free Range Grilled Chicken Breast, Tasty Bacon, Smashed Avocado, Stilton Cheese Sauce, Dijon Mustard, Salad, Relish And Aioli. <a href="#" class="card-link productItem btn btn-primary" data-name="Hawaiian" data-s="free-range" data-price="620" data-id="1">Add to Cart</a> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-block">
+                            <h3 class="card-title">Beeforama</h3>
+                            <h6 class="card-subtitle text-muted">$6.70</h6> <img src="images/beeforama.png" class="img-fluid"> </div>
+                        <div class="card-block">
+                            <div class="card-text">100% Pure Grass Fed Beef, Melted Cheddar, Tasty Bacon, Raw Grated Beetroot W/Chia Seeds, Juicy Mango, Smashed Avocado, Salad, Relish And Aioli. <a href="#" class="productItem btn btn-primary" data-name="Beeforama" data-s="grassfed" data-price="670" data-id="2">Add to Cart</a> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-block">
+                            <h3 class="card-title">Palohalo</h3>
+                            <h6 class="card-subtitle text-muted">$6.50</h6> <img src="images/palohalo.png" class="img-fluid"> </div>
+                        <div class="card-block">
+                            <div class="card-text">A juicy 1/3 pound of flame grilled lamb, crispy corn,  smashed avocado and chipotle aioli, relish, enveloped in a large artisan wholemeal bun. <a href="#" class="productItem btn btn-primary" data-name="Palohalo" data-s="Artisan" data-price="650" data-id="3">Add to Cart</a> </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+	<footer class="footer">
+        <div class="w3-container">
+            <p class="text-xs-center"> Boss Burgers, Copyright &copy; 2017 </p>
+        </div>
+    </footer>
+    <!-- Modals -->
+    <div class="modal fade" id="cart" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Shopping Cart</h4></div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th>Remove</th>
+                                <th>Qty</th>
+                                <th>Item Name</th>
+                                <th>Cost</th>
+                                <th class="text-xs-right">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="output"> </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Continue Shopping</button><a href="checkout.html" class="btn btn-primary">Proceed to checkout</a></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+	
+	    
+</body>
+
+</html>

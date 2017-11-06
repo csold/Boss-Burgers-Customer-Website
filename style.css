@@ -1,0 +1,50 @@
+        body{
+			font: 15px/1.5 Arial, Helvetica,sans-serif;
+			padding:0;
+			margin:0;
+			background-color:#f4f4f4;
+			}
+
+		#output {
+            clear: both;
+        }
+
+        #checkoutdiv {
+            display: none;
+        }
+
+        .footer {
+            background-color: #FF7F50;
+			width: 60%;
+			margin-top: 20px;
+			margin: auto;
+            color: white;
+			height: 75px;
+			overflow: hidden;
+        }
+		.navbar {
+		background-color: #FF7F50;
+		height: 75px;
+		}
+
+		/* Sidebar */
+aside#sidebar{
+  float:right;
+  width:30%;
+  margin-top:10px;
+}
+
+aside#sidebar .quote input, aside#sidebar .quote textarea{
+  width:90%;
+  padding:5px;
+}
+
+/* Main-col */
+article#main-col{
+  float:left;
+  width:65%;
+}
+
+	#plaid {
+		margin-top: 20px;
+	}
