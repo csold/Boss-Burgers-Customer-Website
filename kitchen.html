@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+	<html>
+
+		<head>
+			<meta charset="UTF-8"/>
+			<title> Boss Burgers | Staff </title>
+			<link rel="stylesheet" href="staffstyle.css" />
+            
+		</head>
+        <body>
+            <div class="banner";>
+                <span class="title"> Boss Burgers </span>
+                <span class="undertitle"> Kitchen Interface </span>
+                <button id="logout" class="links"> Log Out </button>
+                <a href="stock.html" class="links"> Stock </a>
+
+            </div>
+                
+
+            <div id="left">
+                <div id="top">
+                    <span style="float: left; padding-left: 60px; padding-top: 35px;" class="secondtitle"> New Orders: </span>
+                    <span style="float: right; padding-left: 60px; padding-top: 35px;" class="secondtitle" id="orderNum"> Orders in queue: # </span>
+                    <div style="clear:both;"></div>
+                </div>
+                <div id="dockets"></div>
+            </div>
+
+            <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+            <script type="text/javascript" src="order_script.js"></script>
+	   		</body>
+
+
+	</html>

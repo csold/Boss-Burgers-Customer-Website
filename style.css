@@ -1,33 +1,32 @@
-body{
-	font: 15px/1.5 Arial, Helvetica,sans-serif;
-	padding:0;
-	margin:0;
-	background-color:#f4f4f4;
-	}
-
-#output {
-         clear: both;
+        body{
+			font: 15px/1.5 Arial, Helvetica,sans-serif;
+			padding:0;
+			margin:0;
+			background-color:#f4f4f4;
+			}
+		
+		#output {
+            clear: both;
         }
-
-#checkoutdiv {
-        display: none;
+        
+        #checkoutdiv {
+            display: none;
         }
-
- .footer {
-        background-color: #FF7F50;
-	width: 60%;
-	margin-top: 20px;
-	margin: auto;
-        color: white;
-	height: 75px;
-	overflow: hidden;
+        
+        .footer {
+            background-color: #FF7F50;
+			width: 100%;
+			margin: auto;
+            color: white;
+			height: 75px;
+			overflow: hidden;
         }
-.navbar {
-	background-color: #FF7F50;
-	height: 75px;
-	margin-top: 20px;
-	}
-
+		.navbar {
+		background-color: #FF7F50;
+		height: 75px;
+		margin-top: 20px;
+		}
+		
 		/* Sidebar */
 aside#sidebar{
   float:right;
@@ -46,14 +45,157 @@ article#main-col{
   width:65%;
 }
 
-#plaid {
-	margin-top: 20px;
-}
+	#plaid {
+		margin-top: 20px;
+	}
 
+	/* The sticky */
 #sticky {
 	
-	position: fixed;
+/*    text-align:center;*/
+    position:fixed;
 	-webkit-transition: all 2s ease-in-out;
 	transition: all 2s ease-in-out;
-	z-index: 1;	
+	z-index: 1; 	
+}
+
+footer a{
+	color:#ffffff;
+	text-decoration:none;
+	text-transform: none;
+	
+  }
+  
+footer li{
+	float:left;
+	display:inline;
+	padding: 0 20px 0 20px;
+  }
+  
+footer #branding{
+	float:left;
+  }
+  
+  
+footer header nav{
+	float:left;
+	margin-top:10px;
+  }
+
+form {
+    
+    width: 300px;
+    
+} 
+
+input {
+    width: 300px;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+}
+
+/* The Modal (background) */
+.burgerModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    margin: 500;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.burgerModal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    /*height: 100%;
+    width: 100%;*/
+    position:relative;
+    width: 85%;
+    height: 85%;/* Could be more or less, depending on screen size */
+}
+
+/*.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}*/
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.addBurger {
+  word-wrap:break-word;
+  background-color: blue;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+#addedIngr {
+  /*background-color: red;*/
+  float: left;
+  width:50%;
+}
+
+#removedIngr {
+  /*background-color: blue;*/
+  float: right;
+  width:50%;
+}
+
+.ingrList {
+  margin: 20px;
+}
+
+.removeIngredient {
+  color: white;
+  background-color: green;
+  padding:10px;
+  padding-left: 30px;
+  margin:5px;
+  border-radius: 10px;
+}
+
+.addIngredient {
+  color: white;
+  background-color: red;
+  padding:10px;
+  padding-left: 30px;
+  margin:5px;
+  border-radius: 10px;
+}
+
+#confirmBurger {
+  background-color: blue;
+  color: white;
+  width: 92%;
+  height: 7%;
+  margin: 20px;
+  position:absolute;
+  align-content: center;
+  border-radius: 10px;
+  padding: 10px;
+  bottom:0;
 }

@@ -1,0 +1,98 @@
+
+.banner {
+    
+	background: #ff7f50;
+	height: 90px;
+	width: 100%;
+}
+
+.title {
+    
+    position: absolute;
+    top: 40px;
+    left: 30px;
+	transform: translateY(-50%);
+	font-size: 20px;
+	color: #fff;
+	font-family: lucida sans, arial, sans-serif;
+}
+
+.order_list{
+    
+	width:200px;
+	list-style-type:none;
+	margin: 5px;
+	display:inline-block;
+	background-color: #E0E0E0;
+	vertical-align: top;
+	padding-left: 20px;
+	border: 1px solid darkgrey;
+	border-radius: 15px;
+    font-family: lucida sans, arial, sans-serif;
+}
+
+.order_list:hover{
+    
+	border: 2px solid darkgrey;
+}
+
+.order_food{
+    
+	padding-left: 20px;
+}
+
+.undertitle {
+
+    position: absolute;
+    top: 65px;
+    left: 30px;
+	transform: translateY(-50%);
+	font-size: 16px;
+	color: #fff;
+	font-family: lucida sans, arial, sans-serif;
+}
+
+.links {
+
+    float: right;
+    padding-right: 40px;
+    padding-top: 35px;
+    background-color: #ff7f50;
+	font-size: 16px;
+	color: #fff;
+	font-family: lucida sans, arial, sans-serif;
+    text-decoration: none;
+}
+
+button {
+    
+    border-style: hidden;
+}
+
+.secondtitle    {
+
+    padding: 30px;
+    font-size: 16px;
+	color: #ff7f50;
+	font-family: lucida sans, arial, sans-serif;
+    font-weight: 900;
+}
+
+
+.stockInput {
+    
+	width: 130px;
+	margin-bottom: 20px;
+}
+
+#orders {
+
+    padding: 3%;
+
+}
+
+canvas {
+    max-height: 500px;
+    max-width: 550px;
+    margin: 20px;
+}

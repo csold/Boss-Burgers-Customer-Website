@@ -7,6 +7,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Checkout Page Boss Burgers</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    
     <style>
         input[type="number"] {
             width: 50px;
@@ -22,126 +24,37 @@
 </head>
 
 <body>
+    
     <div class="container">
+        <h1 style="padding:20px 0px;">BOSS BURGERS</h1>
         <h1>Shopping Checkout</h1>
-        <form onsubmit="formSubmit(this)" action="#">
-            <input type="hidden" name="cmd" value="_cart">
-            <input type="hidden" name="upload" value="1">
-            <input type="hidden" name="business" value="your@emailzzzzzzhere.com">
-            <table class="table table-hover">
+        <form onsubmit="formSubmit(this)" action="confirmation.html">
+         
+            <table class="table" id="table">
                 <thead class="thead-inverse">
                     <tr>
                         <th>Remove</th>
-                        <th>Qty</th>
-                        <th>Item Name</th>
+                        <th>Burger</th>
+                        <th>Ingredients</th>
                         <th>Cost</th>
-                        <th class="text-xs-right">Subtotal</th>
+                        <th>Total</th>
+                        <!-- <th class="text-xs-right">Subtotal</th> -->
                     </tr>
                 </thead>
                 <tbody id="output"> </tbody>
             </table>
+            <div id="total"></div>
             <div class="formrow"><div class="formlabel">Name: </div><input type="text" name="name" id="name" required /></div>
             <div class="formrow"><div class="formlabel">Email: </div><input type="email" name="email" id="email" required/></div>
             <div class="formrow"><div class="formlabel">Phone Number: </div><input type="text" name="number" id="number"required/></div>
-            <input type="submit" class="btn btn-primary btn-info btn-block" value="Pay in cash"/>
-      <a href="products.html" class="btn btn-success">Continue Shopping</a> </form>
+            <input type="submit" class="btn btn-primary btn-info btn-block" value="Confirm Order"/>
+            <a href="index.html" class="btn btn-success">Continue Shopping</a>
+    </form>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
     <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyAB6Gedku794rF0vZzLOeOr0QFyOXzgOGM",
-        authDomain: "boss-burgers.firebaseapp.com",
-        databaseURL: "https://boss-burgers.firebaseio.com",
-        projectId: "boss-burgers",
-        storageBucket: "boss-burgers.appspot.com",
-        messagingSenderId: "415437985852"
-      };
-      firebase.initializeApp(config);
-      var fbref = firebase.database().ref();
-
-      // Order stuff
-        var shopcart = [];
-
-        //Confirm Order
-        function formSubmit(form) {
-          var fbref = firebase.database().ref().child('orders')
-          var orderKey = fbref.push().key;
-          var uName = document.getElementById("name").value;
-          var uEmail = document.getElementById("email").value;
-          var uNumber = document.getElementById("number").value;
-          var uPrice = 0;
-          var uOrder = [];
-          shopcart.forEach(function(item, index) {
-            uOrder[item['name']] = parseInt(item['qty']);
-            uPrice += parseInt(item['price']);
-          });
-          fbref.child(orderKey).set({name:uName, email:uEmail, number:uNumber, price:uPrice, order:uOrder});
-        }
-
-        $(document).ready(function () {
-            outputCart();
-            //Remove item
-            $('#output').on('click','.remove-item',function(){
-                var itemToDelete = $('.remove-item').index(this);
-                shopcart.splice(itemToDelete,1);
-                sessionStorage["sca"] = JSON.stringify(shopcart);
-                outputCart();
-            })
-
-            $('#output').on('change', '.dynqua', function () {
-                var iteminfo = $(this.dataset)[0];
-                var itemincart = false;
-                var removeItem = false;
-                var itemToDelete = 0;
-                console.log(shopcart);
-                var qty = $(this).val();
-                $.each(shopcart, function (index, value) {
-                    if (value.id == iteminfo.id) {
-                        if (qty <= 0) {
-                            removeItem = true;
-                            itemToDelete = index;
-                        }else{
-                            shopcart[index].qty = qty;
-                            itemincart = true;
-                        }
-                    }
-                })
-                if(removeItem){
-                    shopcart.splice(itemToDelete,1);
-                }
-
-                sessionStorage["sca"] = JSON.stringify(shopcart);
-                outputCart();
-            })
-
-            function outputCart() {
-                if (sessionStorage["sca"] != null) {
-                    shopcart = JSON.parse(sessionStorage["sca"].toString());
-                }
-                console.log(sessionStorage["sca"]);
-                console.log(shopcart);
-                var holderHTML = '';
-                var total = 0;
-                var itemCnt = 0;
-                $.each(shopcart, function (index, value) {
-                    var stotal = value.qty * value.price;
-                    var a = (index + 1);
-                    total += stotal;
-                    itemCnt += parseInt(value.qty);
-                    holderHTML += '<tr><td><span class="btn btn-danger remove-item">x</span></td><td><input size="5"  type="number" class="dynqua" name="quantity_' + a + '" value="' + value.qty + '" data-id="' + value.id + '"></td><td><input type="hidden" name="item_name_' + a + '" value="' + value.name + ' ' + value.s + '">' + value.name + '(' + value.s + ')</td><td><input type="hidden" name="amount_' + a + '" value="' + formatMoney(value.price) + '"> $' + formatMoney(value.price) + ' </td><td class="text-xs-right"> ' + formatMoney(stotal) + '</td></tr>';
-                })
-                holderHTML += '<tr><td colspan="4" class="text-xs-right">Total</td><td class="text-xs-right">$' + formatMoney(total) + '</td></tr>';
-                $('#output').html(holderHTML);
-            }
-
-            function formatMoney(n) {
-                return (n / 100).toFixed(2);
-            }
-        })
-    </script>
+    <script src="checkout_script.js"></script>
 </body>
 
 </html>
